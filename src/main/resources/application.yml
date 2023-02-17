@@ -1,0 +1,25 @@
+server:
+  port: 8181
+
+datasource:
+  primary:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/datasource_1_users?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&autoReconnect=true
+    username: root
+
+  secondary:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/datasource_2_users?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&autoReconnect=true
+    username: root
+
+  tertiary:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/datasource_3_users?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&autoReconnect=true
+    username: root
+
+spring:
+  main:
+    allow-bean-definition-overriding: true

@@ -1,0 +1,19 @@
+package com.technoelevate.routedb.util;
+
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+@Component
+public class TransactionalHelper {
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public Object runWithTransaction(ThrowableSupplier supplier) throws Throwable {
+        return supplier.supply();
+    }
+
+    @FunctionalInterface
+    public interface ThrowableSupplier {
+        Object supply() throws Throwable;
+    }
+}
